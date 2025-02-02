@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con Meli</title>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Chat con Meli 🤖📚</h1>
+    <div id="chat">
+        <div id="messages"></div>
+        <input id="input" type="text" placeholder="Escribe tu pregunta...">
+        <button onclick="enviarMensaje()">Enviar</button>
+    </div>
+
+    <script>
+        const socket = io();
+
+        function enviarMensaje() {
+            const input = document.getElementById("input");
+            const mensaje = input.value.trim();
+            if (!mensaje) return;
+
+            mostrarMensaje("Tú: " + mensaje, "user");
+            socket.emit("mensaje", mensaje);
+            input.value = "";
+        }
+
+        socket.on("respuesta", (msg) => {
+            mostrarMensaje("Meli: " + msg, "meli");
+        });
+
+        function mostrarMensaje(msg, tipo) {
+            const messages = document.getElementById("messages");
+            const div = document.createElement("div");
+            div.classList.add("message", tipo);
+            div.innerHTML = formatearMensaje(msg);
+            messages.appendChild(div);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function formatearMensaje(texto) {
+            return texto
+                .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") // Negritas
+                .replace(/\*(.*?)\*/g, "<i>$1</i>") // Cursiva
+                .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>'); // Enlaces
+        }
+    </script>
+</body>
+</html>
