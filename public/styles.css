@@ -73,70 +73,384 @@ body {
     width: 45%;
 }
 
+.botonMeliChat{
+    margin-left: 20%;
+    margin-top: 2%;
+    padding: 1%;
+    width: 10%;
+
+    justify-content: center;
+    display: flex;
+
+    border-radius: 28px;
+    background-color: #FADED2;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #AE084A;
+    text-decoration: none;
+}
+
 .lower-section {
     width: 100%;
     /* 
     max-width: 1200px;*/
     padding-top: 10%;
     text-align: center;
-    font-family: Arial, sans-serif;
+    
     font-size: 1.5rem;
     color: #333;
     background: rgb(184,53,86);
     background: linear-gradient(180deg, rgba(184,53,86,1) 35%, rgba(214,122,141,1) 100%);
 }
 
-/* PAGINA DEL CHAT*/
-#chat {
-    width: 50%;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.ComoFunciona, .popular-cards {
+    opacity: 0;
+    transform: translateY(50px); /* Mueve la sección hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* Estado visible (animado) */
+
+.ComoFunciona.visible, .popular-cards.visible {
+    opacity: 1;
+    transform: translateY(0); /* Regresa a la posición original */
 }
 
-#messages {
-    border: 1px solid #ccc;
-    height: 300px;
-    overflow-y: auto;
-    padding: 10px;
+.titulo2{
+    color: #FADED2;
+    font-size: 3rem;
+    font-family: "Lobster Two", serif;
+    font-weight: 400;
+    font-style: normal;  
+    margin-bottom: 5%;
+}
+.steps {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
 }
-
-.message {
+.step {
+    background-color: #fbf4f1;
     padding: 10px;
-    margin: 5px;
-    border-radius: 10px;
-    max-width: 80%;
-    display: inline-block;
-    word-wrap: break-word;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
 }
 
-.user {
-    background-color: #dcf8c6;
-    align-self: flex-end;
+
+
+.step h3 {
+    font-size: 1.5rem;
+    color: #B83556;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+.step p {
+    font-size: 1rem;
+    color: #555;
+}
+.step .icon svg{
+    width: 15%;
+    height: 15%;
+    margin-top: 5%;
 }
 
-.meli {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    align-self: flex-start;
+/* POPULAR 
+
+.popular-cards {
+    padding: 50px 20px;
+    margin-top: 7%;
 }
 
-input {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-button {
-    padding: 10px;
-    background: #007bff;
-    color: white;
+.card {
+    position: relative;
+    width: 20%;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.card-overlay h3 {
+    font-size: 1.5rem;
+    margin: 0 0 5px;
+}
+
+.card-overlay p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+*/
+
+
+.wave-separator {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-separator svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.bestseller-section {
+    display: flex;
+    gap: 30px;
+    padding: 4%;
+    align-items: center;
+    justify-content: center;
+    background-color: #FADED2;
+}
+
+.bestseller-content {
+    max-width: 400px;
+}
+
+.bestseller-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: "Lobster Two", serif;
+    color: #B83556;
+}
+
+.bestseller-content p {
+    margin-bottom: 20px;
+    color: #555;
+    font-family: "Kufam", serif;
+
+}
+
+.bestseller-content button {
+    padding: 10px 20px;
+    background-color: #B83556;
+    color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 28px;    
+    transition: background-color 0.3s ease;
+    font-family: "Kufam", serif;
+
+}
+
+.bestseller-content button:hover {
+    background-color: #ff6584;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+    width: 950%;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 
 
+.carousel-card {
+    position: relative;
+    width: 300px; /* Cambia el ancho de las tarjetas */
+    max-width: 6000px; /* Agrega un máximo para evitar tarjetas demasiado grandes */
+    height: 72vh;
+    border-radius: 45px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0.2%;
+}
+
+
+.card-info {
+    padding: 10px;
+    background-color: #ffecf0;
+    font-family: "Kufam", serif;
+    height: 100%;
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.card-info h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #D67A8D;
+}
+
+.card-info p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 100%;
+    border-color: #AE084A;
+    z-index: 100;
+    background-color: #AE084A;
+
+    /* Centrar el contenido con Flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Ajustar tamaño del botón */
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 1px;
+}
+
+/* Mensaje final call to action*/
+.cta-section {
+    text-align: center;
+    background-color: #FADED2; /* Fondo acorde a tu diseño */
+    padding: 50px 20px;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    color: #B83556;
+    font-family: "Lobster Two", serif;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    color: #555;
+    font-family: "Kufam", serif;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #B83556;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Kufam", serif;
+    padding: 10px 20px;
+    border-radius: 28px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #ff6584;
+}
+
+/*FOOTER*/
+.footer {
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    font-family: "Kufam", serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-family: "Lobster Two", serif;
+}
+
+.footer-links a {
+    margin: 20px 10px;
+    color: #ffecf0;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+.footer-socials{
+ margin-top: 2%;
+}
+.footer-socials a {
+    margin: 0px 10px;
+    color: #ffecf0;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}

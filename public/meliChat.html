@@ -5,16 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat con Meli</title>
     <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stylesChat.css">
 </head>
 <body>
-    <h1>Chat con Meli 🤖📚</h1>
-    <div id="chat">
-        <div id="messages"></div>
-        <input id="input" type="text" placeholder="Escribe tu pregunta...">
-        <button onclick="enviarMensaje()">Enviar</button>
+    <div class="container">
+        <!-- Menú lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Meli</h2>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Ejemplo 1</a></li>
+                <li><a href="#">Ejemplo 2</a></li>
+                <li><a href="#">Ejemplo 3</a></li>
+            </ul>
+        </aside>
+
+        <!-- Área de chat -->
+        <main class="chat-area">
+            <h1>Chat con Meli 🤖📚</h1>
+            <div id="chat">
+                <div id="messages"></div>
+                <div class="input-area">
+                    <input id="input" type="text" placeholder="Escribe tu pregunta...">
+                    <button onclick="enviarMensaje()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                            <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
     </div>
 
+    <!-- Script del chat -->
     <script>
         const socket = io();
 
@@ -49,4 +73,5 @@
         }
     </script>
 </body>
+
 </html>

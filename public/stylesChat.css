@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400..900;1,400..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    font-family: "Kufam", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #FFFFFF;
+    background: rgb(184,53,86);
+    background: linear-gradient(45deg, rgba(184,53,86,1) 0%, rgba(230,114,114,1) 50%, rgba(214,122,141,1) 100%);
+}
+
+/* PAGINA DEL CHAT*/
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 98%;
+}
+
+/* Menú lateral */
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .logo {
+    margin-bottom: 20px;
+    font-family: "Lobster Two", serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar .menu li {
+    margin: 10px 0;
+}
+
+.sidebar .menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-family: "Kufam", serif;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.sidebar .menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Área del chat */
+.chat-area {
+    flex: 1;
+    background: #B83556;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 1%;
+    border-radius: 25px;
+    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chat-area h1 {
+    color: #f9f9f9;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Lobster Two", serif;
+}
+
+/* Chat */
+#chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FADED2;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#messages {
+    flex: 1;
+    border: none;
+    height: auto;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mensajes */
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 80%;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.user {
+    background: linear-gradient(45deg, rgba(184,53,86,1) 0%, rgba(230,114,114,1) 100%);
+    color: #FFFFFF;
+    align-self: flex-end;
+}
+
+.meli {
+    background-color: #292A33;
+    color: #FFFFFF;
+    border: 1px solid #ccc;
+    align-self: flex-start;
+}
+
+/* Entrada de texto */
+.input-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    background: #e9c8b9;
+    color: #FFFFFF;
+}
+
+
+button {
+    padding: 10px;
+    background: #b83280;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background: #ff6584;
+}

@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat con Meli</title>
     <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="aparicionCards.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
 
     <div class="container">
         <div class="header">
@@ -24,13 +25,233 @@
         <div class="text-subtitulo">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu auctor tellus, ac finibus elit. Vivamus sed tortor accumsan.
         </div>
+        
+        <a href="meliChat.html" class="botonMeliChat">Texto</a>
+
     </div>
    
     <div class="lower-section">
-        <div>Aquí puedes explorar más contenido sobre nuestras recomendaciones literarias y descubrir historias que te encantarán.
+        <section class="ComoFunciona">
+            <h2 class="titulo2">Cómo Funciona Meli</h2>
+              <!-- Paso 1 -->
+            <div class="steps">
+                <div class="step">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+                            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"/>
+                        </svg>
+                    </div>
+
+                    <h3>Habla con Meli</h3>
+                    <p>Inicia una conversación con Meli en el chat y comparte tus gustos literarios.</p>
+                </div>
+                <!-- Paso 2 -->
+                <div class="step">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
+                            <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
+                            <path d="M13 6.5a6.47 6.47 0 0 1-1.258 3.844q.06.044.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11"/>
+                        </svg>
+                    </div>
+                    
+                    <h3>Explora Recomendaciones</h3>
+                    <p>Descubre historias personalizadas basadas en tus preferencias.</p>
+                </div> 
+                <!-- Paso 3 -->
+                <div class="step">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+                        </svg>
+                    </div>
+                    
+                    <h3>Disfruta la Lectura</h3>
+                    <p>Encuentra tu próxima aventura literaria y empieza a leer.</p>
+                </div>  
+            </div> 
+        </section>
+        <!-- popular v1 
+        
+        <section class="popular-cards">
+                <h2 class="titulo2">Explora por Categoría</h2>
+                <div class="cards-grid">
+                  
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./media/fantasia.png" alt="Fantasía">
+                            <div class="card-overlay">
+                                <h3>Fantasía</h3>
+                                <p>Descubre mundos mágicos llenos de aventuras y criaturas míticas.</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./media/romance.png" alt="Romance">
+                            <div class="card-overlay">
+                                <h3>Romance</h3>
+                                <p>Historias llenas de amor, pasión y emociones inolvidables.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./media/aventura.png" alt="Aventuras">
+                            <div class="card-overlay">
+                                <h3>Aventuras</h3>
+                                <p>Vive las aventuras más emocionantes explorando nuevos horizontes.</p>
+                            </div>
+                        </div>
+                    </div>
+                     
+                     <div class="card">
+                        <div class="card-image">
+                            <img src="./media/aventura.png" alt="Aventuras">
+                            <div class="card-overlay">
+                                <h3>Aventuras</h3>
+                                <p>Vive las aventuras más emocionantes explorando nuevos horizontes.</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+           
+        </section>
+        -->
+
+        <!-- WAVE -->
+        <div class="wave-separator">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 215">
+                <path fill="#FADED2" fill-opacity="1" d="M0,96L60,122.7C120,149,240,203,360,208C480,213,600,171,720,160C840,149,960,171,1080,181.3C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            </svg>
         </div>
-        <div>Aquí puedes explorar más contenido sobre nuestras recomendaciones literarias y descubrir historias que te encantarán.
+        <!-- CATEGORIAS -->
+        <section class="bestseller-section">
+            
+            <div class="bestseller-content">
+                <h2>Explora las Categorías</h2>
+                <p>Descubre historias fascinantes en las categorías más populares. Desde mundos mágicos hasta emocionantes aventuras, ¡tenemos algo para todos!</p>
+                <button>Ver Más</button>
+            </div>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <!-- Fantasía -->
+                    <div class="carousel-card">
+                        <div class="card-image">
+                            <img src="./media/fantasia.png" alt="Fantasía">
+                        </div>
+                        <div class="card-info">
+                            <h3>Fantasía</h3>
+                            <p>Mundos mágicos llenos de criaturas míticas.</p>
+                        </div>
+                    </div>
+                    <!-- Romance -->
+                    <div class="carousel-card">
+                        <div class="card-image">
+                            <img src="./media/romance.png" alt="Romance">
+                        </div>
+                        <div class="card-info">
+                            <h3>Romance</h3>
+                            <p>Historias llenas de amor y pasión inolvidables.</p>
+                        </div>
+                    </div>
+                    <!-- Misterio -->
+                    <div class="carousel-card">
+                        <div class="card-image">
+                            <img src="./media/misterio.png" alt="Misterio">
+                        </div>
+                        <div class="card-info">
+                            <h3>Misterio</h3>
+                            <p>Descubre secretos y resuelve misterios oscuros.</p>
+                        </div>
+                    </div>
+                    <!-- Aventuras -->
+                    <div class="carousel-card">
+                        <div class="card-image">
+                            <img src="./media/aventura.png" alt="Aventuras">
+                        </div>
+                        <div class="card-info">
+                            <h3>Aventuras</h3>
+                            <p>Explora horizontes emocionantes y únicos.</p>
+                        </div>
+                    </div>
+                    <!-- Ciencia Ficción -->
+                    <div class="carousel-card">
+                        <div class="card-image">
+                            <img src="./media/ciencia ficcion.jpg" alt="Ciencia Ficción">
+                        </div>
+                        <div class="card-info">
+                            <h3>Ciencia Ficción</h3>
+                            <p>Explora tecnologías y mundos increíbles del futuro.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                 
+                <button class="carousel-button prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                </button>
+                <button class="carousel-button next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- MENSAJE CALL TO ACTION-->
+        <section class="cta-section">
+            <h2>¿Listo para encontrar tu próxima historia favorita?</h2>
+            <p>¡Habla con Meli ahora!</p>
+            <a href="meliChat.html" class="cta-button">Ir al Chat</a>
+        </section>
+
+        <!-- WAVE-->
+        <div class="wave-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 1440 270"> 
+                <path fill="#FADED2" fill-opacity="1" d="M0,192L30,181.3C60,171,120,149,180,165.3C240,181,300,235,360,256C420,277,480,267,540,234.7C600,203,660,149,720,122.7C780,96,840,96,900,117.3C960,139,1020,181,1080,208C1140,235,1200,245,1260,218.7C1320,192,1380,128,1410,96L1440,64L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+            </svg>
         </div>
+
+        <!-- FOOTER-->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h2>Meli</h2>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Inicio</a>
+                    <a href="#about">Sobre Meli</a>
+                    <a href="#categories">Categorías</a>
+                    <a href="#chat">Chat</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M8.944 9.515V16h-2.761V9.515H4.79V7.186h1.393V5.604c0-1.083.538-2.767 2.76-2.767H9.98v2.24H8.944c-.237 0-.56.113-.56.591v1.518H9.98l-.175 2.33h-1.86z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334v-.426A6.68 6.68 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.29 3.29 0 0 0 1.447-1.817 6.573 6.573 0 0 1-2.084.797A3.286 3.286 0 0 0 7.88 6.03a9.325 9.325 0 0 1-6.766-3.429 3.289 3.289 0 0 0 1.018 4.382 3.32 3.32 0 0 1-1.487-.41v.041a3.287 3.287 0 0 0 2.633 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.617-.059 3.287 3.287 0 0 0 3.067 2.277 6.588 6.588 0 0 1-4.862 1.365 9.286 9.286 0 0 0 5.026 1.474"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 3c-1.918 0-2.146.007-2.891.041-.741.033-1.26.162-1.706.349a3.9 3.9 0 0 0-1.415.937 3.9 3.9 0 0 0-.937 1.415c-.187.445-.316.964-.349 1.706C1.007 5.854 1 6.082 1 8c0 1.918.007 2.146.041 2.891.033.741.162 1.26.349 1.706a3.9 3.9 0 0 0 .937 1.415 3.9 3.9 0 0 0 1.415.937c.445.187.964.316 1.706.349.745.034.973.041 2.891.041s2.146-.007 2.891-.041c.741-.033 1.26-.162 1.706-.349a3.9 3.9 0 0 0 1.415-.937 3.9 3.9 0 0 0 .937-1.415c.187-.445.316-.964.349-1.706.034-.745.041-.973.041-2.891s-.007-2.146-.041-2.891c-.033-.741-.162-1.26-.349-1.706a3.9 3.9 0 0 0-.937-1.415 3.9 3.9 0 0 0-1.415-.937c-.445-.187-.964-.316-1.706-.349C10.146 3.007 9.918 3 8 3zm0-1c1.99 0 2.237.007 3.014.041.847.036 1.522.175 2.1.395.61.234 1.122.58 1.627 1.085.505.505.851 1.016 1.085 1.627.22.578.359 1.253.395 2.1.034.777.041 1.024.041 3.014s-.007 2.237-.041 3.014c-.036.847-.175 1.522-.395 2.1-.234.61-.58 1.122-1.085 1.627-.505.505-1.016.851-1.627 1.085-.578.22-1.253.359-2.1.395-.777.034-1.024.041-3.014.041s-2.237-.007-3.014-.041c-.847-.036-1.522-.175-2.1-.395a3.978 3.978 0 0 1-1.627-1.085 3.978 3.978 0 0 1-1.085-1.627c-.22-.578-.359-1.253-.395-2.1C1.007 10.237 1 9.99 1 8s.007-2.237.041-3.014c.036-.847.175-1.522.395-2.1a3.978 3.978 0 0 1 1.085-1.627 3.978 3.978 0 0 1 1.627-1.085c.578-.22 1.253-.359 2.1-.395C5.763 2.007 6.01 2 8 2zM8 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 1a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm4.5-.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer-copy">&copy; 2025 Meli. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+
     </div>
     
     
