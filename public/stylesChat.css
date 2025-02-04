@@ -12,8 +12,13 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     color: #FFFFFF;
-    background: rgb(184,53,86);
+   /*  background: rgb(184,53,86);
+    
     background: linear-gradient(45deg, rgba(184,53,86,1) 0%, rgba(230,114,114,1) 50%, rgba(214,122,141,1) 100%);
+    
+    background: linear-gradient(45deg, #B83556, #D67A8D, #FADED2);*/
+    background: linear-gradient(180deg, #b83556, #d67a8c);
+
 }
 
 /* PAGINA DEL CHAT*/
@@ -33,6 +38,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: linear-gradient(180deg, #b8355635, #d67a8c);
 }
 
 .sidebar .logo {
@@ -40,6 +46,8 @@ body {
     font-family: "Lobster Two", serif;
     font-size: 2rem;
     text-align: center;
+    color: #FADED2;
+
 }
 
 .sidebar .menu {
@@ -55,7 +63,7 @@ body {
 
 .sidebar .menu a {
     text-decoration: none;
-    color: #fff;
+    color: #FADED2;
     font-size: 1rem;
     font-family: "Kufam", serif;
     padding: 10px 20px;
@@ -65,27 +73,31 @@ body {
 }
 
 .sidebar .menu a:hover {
-    background: rgba(255, 255, 255, 0.2);
+   /* background: rgba(255, 255, 255, 0.2);*/
+    background: #F5A5B5;
+    color: #FFFFFF;
 }
 
 /* Área del chat */
 .chat-area {
     flex: 1;
-    background: #B83556;
+   
+    /*
+    background: rgb(184,53,86);
+    background: linear-gradient(45deg, rgba(184,53,86,1) 0%, rgba(230,114,114,1) 50%, rgba(214,122,141,1) 100%);
+   */
+   background: linear-gradient(45deg, #d6667d, #DC97A5);
+
     display: flex;
     flex-direction: column;
     padding: 20px;
     margin: 1%;
     border-radius: 25px;
     box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 50%;
 }
 
-.chat-area h1 {
-    color: #f9f9f9;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: "Lobster Two", serif;
-}
+
 
 /* Chat */
 #chat {
@@ -93,10 +105,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #FADED2;
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.205);
+    background: #f1cfcfc3;
+    max-height: 95%;
 }
 
 #messages {
@@ -119,18 +132,38 @@ body {
     word-wrap: break-word;
 }
 
+
 .user {
-    background: linear-gradient(45deg, rgba(184,53,86,1) 0%, rgba(230,114,114,1) 100%);
-    color: #FFFFFF;
+   
+    background-color: #ea469d;
+    color:#ffffff;
     align-self: flex-end;
+    max-width: 45%;
+    border-radius: 28px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.107);
+
+}
+.meli-message-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.meli {
+    background-color: #FADED2;
+    color: #555555;
+    align-self: flex-start;
+    border-radius: 28px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.107);
+    max-width: 75%;
+}
+/* Imagen de perfil de Meli */
+.meli-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.meli {
-    background-color: #292A33;
-    color: #FFFFFF;
-    border: 1px solid #ccc;
-    align-self: flex-start;
-}
 
 /* Entrada de texto */
 .input-area {
@@ -145,15 +178,22 @@ input {
     flex: 1;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid #fff;
-    background: #e9c8b9;
-    color: #FFFFFF;
+    border: 1px solid #ff8686;
+    background-color: #faded2d7;
+    color: #555555;
+}
+input:focus {
+    box-shadow: 0 0 8px #f5a5b596;
+    outline: none;
+}
+::placeholder{
+    color: #80545f;
 }
 
 
 button {
     padding: 10px;
-    background: #b83280;
+    background: #B83556;
     color: white;
     border: none;
     cursor: pointer;

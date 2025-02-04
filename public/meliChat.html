@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat con Meli</title>
     <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="chatAnimations.js"></script>
+
     <link rel="stylesheet" href="stylesChat.css">
 </head>
 <body>
@@ -15,7 +17,7 @@
                 <h2>Meli</h2>
             </div>
             <ul class="menu">
-                <li><a href="#">Ejemplo 1</a></li>
+                <li><a href="\">Home</a></li>
                 <li><a href="#">Ejemplo 2</a></li>
                 <li><a href="#">Ejemplo 3</a></li>
             </ul>
@@ -23,7 +25,7 @@
 
         <!-- Área de chat -->
         <main class="chat-area">
-            <h1>Chat con Meli 🤖📚</h1>
+           <!-- <h1>Chat con Meli 🤖📚</h1>-->
             <div id="chat">
                 <div id="messages"></div>
                 <div class="input-area">
@@ -57,13 +59,35 @@
         });
 
         function mostrarMensaje(msg, tipo) {
-            const messages = document.getElementById("messages");
-            const div = document.createElement("div");
-            div.classList.add("message", tipo);
-            div.innerHTML = formatearMensaje(msg);
-            messages.appendChild(div);
-            messages.scrollTop = messages.scrollHeight;
-        }
+    const messages = document.getElementById("messages");
+    const div = document.createElement("div");
+
+    if (tipo === "meli") {
+        // Contenedor para la foto y mensaje de Meli
+        div.classList.add("meli-message-container");
+
+        // Crear imagen de perfil de Meli
+        const avatar = document.createElement("img");
+        avatar.src = "./media/meli-avatar.png"; // Asegúrate de tener esta imagen en tu carpeta media
+        avatar.alt = "Avatar de Meli";
+        avatar.classList.add("meli-avatar");
+
+        // Contenedor del mensaje
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message", tipo);
+        messageDiv.innerHTML = formatearMensaje(msg);
+
+        // Agregar imagen y mensaje en el contenedor
+        div.appendChild(avatar);
+        div.appendChild(messageDiv);
+    } else {
+        div.classList.add("message", tipo);
+        div.innerHTML = formatearMensaje(msg);
+    }
+
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+}
 
         function formatearMensaje(texto) {
             return texto

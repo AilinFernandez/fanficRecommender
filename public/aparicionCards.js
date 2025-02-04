@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     elementsToAnimate.forEach((element) => observer.observe(element)); // Observa cada sección
 });
 
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
     const track = document.querySelector(".carousel-track");
     const prevButton = document.querySelector(".carousel-button.prev");
@@ -75,4 +75,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Ajustar el tamaño del track para incluir los clones
     track.style.width = `${(cards.length + 2) * cardWidth}px`;
+});
+*/
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".carousel-track");
+    const prevButton = document.querySelector(".carousel-button.prev");
+    const nextButton = document.querySelector(".carousel-button.next");
+    let cards = document.querySelectorAll(".carousel-card");
+    const cardWidth = cards[0].offsetWidth;
+    let currentIndex = 0;
+
+    // Clonar el primer y último elemento
+    const firstClone = cards[0].cloneNode(true);
+    const lastClone = cards[cards.length - 1].cloneNode(true);
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, cards[0]);
+
+    // Actualizar la lista de tarjetas
+    cards = document.querySelectorAll(".carousel-card");
+
+    const updatePosition = () => {
+        track.style.transition = "transform 0.5s ease-in-out";
+        track.style.transform = `translateX(-${(currentIndex + 1) * cardWidth}px)`;
+    };
+
+    // Ajustar el tamaño del track
+    track.style.width = `${cards.length * cardWidth}px`;
+
+    // Inicializar la posición
+    updatePosition();
+
+    nextButton.addEventListener("click", () => {
+        if (currentIndex >= cards.length - 2) {
+            currentIndex = 0;
+            track.style.transition = "none";
+            updatePosition();
+            setTimeout(() => {
+                track.style.transition = "transform 0.5s ease-in-out";
+                currentIndex++;
+                updatePosition();
+            }, 50);
+        } else {
+            currentIndex++;
+            updatePosition();
+        }
+    });
+
+    prevButton.addEventListener("click", () => {
+        if (currentIndex <= 0) {
+            currentIndex = cards.length - 2;
+            track.style.transition = "none";
+            updatePosition();
+            setTimeout(() => {
+                track.style.transition = "transform 0.5s ease-in-out";
+                currentIndex--;
+                updatePosition();
+            }, 50);
+        } else {
+            currentIndex--;
+            updatePosition();
+        }
+    });
 });
