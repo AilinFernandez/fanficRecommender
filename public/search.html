@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda Avanzada</title>
+    <link rel="stylesheet" href="stylesSearch.css">
+    <script src="search.js" ></script>
+</head>
+<body>
+        <h1>Búsqueda Avanzada</h1>
+
+    <div class="filters">
+        <label for="category">Categoría:</label>
+        <select id="category">
+            <option value="">Todas</option>
+            <option value="Aventuras">Aventuras</option>
+            <option value="Ciencia Ficción">Ciencia Ficción</option>
+            <option value="Fantasía">Fantasía</option>
+            <!-- Agregar más categorías -->
+        </select>
+
+        <label for="platform">Plataforma:</label>
+        <select id="platform">
+            <option value="">Todas</option>
+            <option value="AO3">AO3</option>
+            <option value="Wattpad">Wattpad</option>
+            <option value="Fanfiction.net">Fanfiction.net</option>
+        </select>
+
+
+        <label for="tags">Etiquetas:</label>
+        <div id="tags-container">
+            <input type="text" id="tag-input" placeholder="Escribe una etiqueta...">
+        </div>
+        <small>Presiona Enter para añadir etiquetas (máximo 10).</small>
+
+        <button id="search-button">Buscar</button>
+    </div>
+    <div id="results"></div>
+
+</body>
+</html>

@@ -121,7 +121,31 @@ body {
     display: flex;
     flex-direction: column;
 }
+/* Personalizar la barra de scroll dentro del chat */
+#messages {
+    scrollbar-width: thin; /* Para Firefox */
+    scrollbar-color: #B83556 #FADED2; /* Color de la barra y del fondo */
+}
 
+/* Para navegadores basados en Webkit (Chrome, Edge, Safari) */
+#messages::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de scroll */
+}
+
+#messages::-webkit-scrollbar-track {
+    background: #FADED2; /* Color del fondo del track */
+    border-radius: 10px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+    background: #B83556; /* Color de la barra */
+    border-radius: 10px;
+    border: 2px solid #FADED2; /* Bordes */
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+    background: #D67A8D; /* Cambio de color al pasar el mouse */
+}
 /* Mensajes */
 .message {
     padding: 10px;
