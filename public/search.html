@@ -5,39 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Búsqueda Avanzada</title>
     <link rel="stylesheet" href="stylesSearch.css">
+
     <script src="search.js" ></script>
+
 </head>
 <body>
-        <h1>Búsqueda Avanzada</h1>
-
+        <h1 class="titulo">Búsqueda Avanzada</h1>
+    
     <div class="filters">
-        <label for="category">Categoría:</label>
-        <select id="category">
-            <option value="">Todas</option>
-            <option value="Aventuras">Aventuras</option>
-            <option value="Ciencia Ficción">Ciencia Ficción</option>
-            <option value="Fantasía">Fantasía</option>
-            <!-- Agregar más categorías -->
-        </select>
-
-        <label for="platform">Plataforma:</label>
-        <select id="platform">
-            <option value="">Todas</option>
-            <option value="AO3">AO3</option>
-            <option value="Wattpad">Wattpad</option>
-            <option value="Fanfiction.net">Fanfiction.net</option>
-        </select>
-
-
-        <label for="tags">Etiquetas:</label>
-        <div id="tags-container">
-            <input type="text" id="tag-input" placeholder="Escribe una etiqueta...">
+        <div class="contenedor">
+            <label for="category">Categoría:</label>
+            <select id="category">
+                <option value="">Todas</option>
+                <option value="Aventuras">Aventuras</option>
+                <option value="Ciencia Ficción">Ciencia Ficción</option>
+                <option value="Fantasía">Fantasía</option>
+                <!-- Agregar más categorías -->
+            </select>
         </div>
-        <small>Presiona Enter para añadir etiquetas (máximo 10).</small>
+        <div class="contenedor">
+            <label for="platform">Plataforma:</label>
+            <select id="platform">
+                <option value="">Todas</option>
+                <option value="AO3">AO3</option>
+                <option value="Wattpad">Wattpad</option>
+                <option value="Fanfiction.net">Fanfiction.net</option>
+            </select>
+        </div>
+        <div class="contenedor">
+            <label for="tags">Etiquetas:</label>
 
-        <button id="search-button">Buscar</button>
+            <div id="tags-container">
+                <input type="text" id="tag-input" placeholder="Escribe una etiqueta...">
+            </div>
+            <small>Presiona Enter para añadir etiquetas (máximo 10).</small>
+        </div>
+        <button id="search-button" class="boton">Buscar</button>
+        
     </div>
-    <div id="results"></div>
 
+    
+
+    <div class="container">
+        <!-- WAVE-->
+        <div class="wave-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 1440 270"> 
+                <path fill="#FADED2" fill-opacity="1" d="M0,192L30,181.3C60,171,120,149,180,165.3C240,181,300,235,360,256C420,277,480,267,540,234.7C600,203,660,149,720,122.7C780,96,840,96,900,117.3C960,139,1020,181,1080,208C1140,235,1200,245,1260,218.7C1320,192,1380,128,1410,96L1440,64L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
+            </svg>
+        </div>
+       
+        <div id="results">
+           
+        
+        </div>
+    </div>
+   
 </body>
 </html>

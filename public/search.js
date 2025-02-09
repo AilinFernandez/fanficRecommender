@@ -172,11 +172,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         const resultItem = document.createElement("div");
                         resultItem.classList.add("result-item");
                         resultItem.innerHTML = `
-                            <h3>${item.Título}</h3>
-                            <p><strong>Autor:</strong> ${item.Autor}</p>
-                            <p><strong>Resumen:</strong> ${item.Resumen}</p>
-                            <p><strong>Plataforma:</strong> ${item.Plataforma}</p>
-                            <a href="${item.Enlace}" target="_blank">Leer más</a>
+                            
+                                <div class="card-container">
+                                    <div class="card">
+                                        <h2 class="card-title">${item.Título}</h2>
+                                        <h3 class="card-subtitle">${item.Autor}</h3>
+                                        <p class="card-description">${item.Resumen}</p>
+                                        <p><strong>Plataforma:</strong> ${item.Plataforma}</p>
+                                        <a href="${item.Enlace}" class="card-link">Leer más</a>
+                                    </div>
+                                </div>
                         `;
                         resultsDiv.appendChild(resultItem);
                     });
